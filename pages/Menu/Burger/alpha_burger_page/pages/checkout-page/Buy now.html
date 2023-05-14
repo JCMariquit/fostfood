@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy now</title>
+  
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- custom css file cdn link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+    <div class="icons">
+        <div class="fas fa-share" id="theme-btn" onclick="history.back()"></div>
+    </div>
+
+    <a href="#" class="logo"> <i class="fas fa-utensils"></i> JB's Yard </a>
+    <div></div>
+ 
+</header>
+
+<section class="pricing" id="pricing">
+
+    <p class="br"></p>
+    
+    <div class="box-container">
+        <div class="box" data-aos="zoom-in-up">
+            <center>
+                <div>
+                    <h3 class="heading"> Check <span>Out</span> </h3>
+                    </div><br><br>
+
+                    <section class="placeorder" id="placeorder">
+
+                        <div class="box-container">
+                            
+                            <div class="box" data-aos="zoom-in-up">
+                                <form action="emailhere@yahoo.com" method="POST">
+
+                                    <center>
+                                        <div class="price">
+                                            <h3 class="heading"> Fost <span>Alpha Burger</span> </h3>
+                                        </div>
+                                    </center>
+
+                                    <center>
+                                    <div class="price">
+                                            <span>₱</span>
+                                            <span class="amount" >180</span>
+                                            <span>/pcs</span>
+                                        </div>
+                                    </center>
+                                        
+                                    <input type="hidden" name="Fost Alpha Burger">
+
+                                    <p style="font-size:20px"><strong>Order Details</strong>  
+                                        <input type="hidden" name="Order Details">
+                                        <p style="font-size:20px"><strong>&emsp;Name:</strong>     
+                                            <input style="height:20px; width: 10em; font-size:14pt;" type="text" name="Name:" placeholder="Name" required>
+                                        </p>
+
+                                        <p style="font-size:20px"><strong>&emsp;Number:</strong>     
+                                            <input style="height:20px; width: 8.8em; font-size:14pt;" type="text" name="Number:" placeholder="Mobile-phone" required>
+                                        </p>
+                                    </p>
+
+                                    <p style="font-size:20px"><strong>&emsp;Address:</strong></p>   
+                                    <p style="font-size:20px"><strong>&emsp;&emsp;Province/City:</strong>     
+                                        <input style="height:20px; width: 8em; font-size:14pt;" type="text" name="Province:" placeholder="City/Province" required> 
+                                    </p>
+                                    
+
+                                    <p style="font-size:20px"><strong>&emsp;&emsp;Town:</strong>     
+                                        <input style="height:20px; width: 9.1em; font-size:14pt;" type="text" name="Town:" placeholder="Town" required>
+                                    </p>
+
+                                    <p style="font-size:20px"><strong>&emsp;&emsp;Barrangay:</strong>     
+                                        <input style="height:20px; width: 6.5em; font-size:14pt;" type="text" name="Barrangay:" placeholder="Barrangay" required>
+                                    </p>
+
+                                    <p style="font-size:20px"><strong>&emsp;&emsp;District:</strong>     
+                                        <input style="height:20px; width: 8.1em; font-size:14pt;" type="text" name="Barrangay district:" placeholder="Sitio/Bario" required>
+                                    </p>
+
+                                    <fieldset>   
+                                        <p style="font-size:20px"><strong>&emsp;Shipping option:</strong>  
+                                            <p style="font-size:20px"><strong>&emsp;&emsp;Dine-in&nbsp;&nbsp;</strong>  
+                                                <input style="height:20px; width: 8em; font-size:14pt;" type="checkbox" name="Shipping option" value="Dine-in" onclick="return ValidatePetSelection();">
+                                            </p>
+                                            <p style="font-size:20px"><strong>&emsp;&emsp;Delivery</strong>  
+                                                <input style="height:20px; width: 8em; font-size:14pt;" type="checkbox" name="Shipping option" value="Delivery, Payment option: COD" onclick="return ValidatePetSelection();">
+                                            </p>
+                                        </p>
+                                    </fieldset>  
+                                   
+
+                                    <script type="text/javascript">  
+                                        function ValidatePetSelection()  
+                                        {  
+                                            var checkboxes = document.getElementsByName("Shipping option");   
+                                            var numberOfCheckedItems = 0;  
+                                            for(var i = 0; i < checkboxes.length; i++)  
+                                            {  
+                                                if(checkboxes[i].checked)  
+                                                    numberOfCheckedItems++;  
+                                            }  
+                                            if(numberOfCheckedItems > 1)  
+                                            {  
+                                                alert("You can only use one Shipping option");  
+                                                return false;  
+                                            }  
+                                        }  
+                                    </script>
+                                    <div data-ng-app="" data-ng-init="quantity=0;price=180;shipping=60">
+
+                                        <p style="font-size:20px"><strong>&emsp;Payment Details</strong> 
+                                            <p style="font-size:20px"><strong>&emsp;&emsp;Quantity:</strong>
+                                            <input style="height:20px; width: 7.3em; font-size:14pt;" type="number" name="Quantity " ng-model="quantity"></p>
+                                        </p>
+
+                                        <input type="hidden" name="_captcha" value="false">
+
+                                        <p name="Total: " style="font-size:20px"><strong>&emsp;&emsp;MerchandiseSubtotal₱</strong>{{quantity * price}}
+                                            <input type="hidden" name="Merchandise Subtotal: ₱ {{quantity * price}}">
+                                        </p>
+                                        <p style="font-size:20px"><strong>&emsp;&emsp;ShippingSubtotal: ₱60</strong>
+                                            <input type="hidden" name="ShippingSubtotal: ₱60">
+                                        </p>
+                                        <p style="font-size:20px"><strong>&emsp;&emsp;Total Payment ₱</strong> {{quantity * price + shipping}}
+                                            <input type="hidden" name="Total Payment: ₱{{quantity * price + shipping}}">
+                                        </p>
+                                    </div>
+                                    <input type="hidden" name="_next" value="locate the order receive in the files">
+                                    <input type="submit" value="Check Out" class="btn">
+
+                                    <ul>
+                                        <li><strong>Discription</strong></li>
+                                        <li>On a burger, he says, pineapple helps to balance everything out. “It's playing a similar role to pickles. Pickles provide that sweet, salty, tangy flavour on a burger that cuts through the roof of the mouth. what many people do not know is pineapple has an enzyme called bromelain that softens muscle fiber. This enzyme reacts with the protein in the meat to break it down and increases the meat's potential to absorb more moisture. This is the reason why pineapple is one of the most preferred tenderizers.  </li>
+                                        <li><strong>Ingredients</strong></li>
+                                        <li>pineapple, buns, beef patty, letuce, mustart, ketchop, chopped onions, pickles, cheese</li>
+                                    </ul>
+                                </form>
+                            </div>  
+                        </div>
+                    </section> 
+                </div>
+            </center>  
+        </div>
+    </div>
+</section>
+
+    <p class="br1"></p>
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <center>
+        <div class="box-container">
+
+            <div class="box" data-aos="fade-up">
+                <h3>Our Location</h3>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> Gasan Marinduque </a>
+            </div> 
+            <div class="box" data-aos="fade-up">
+                <h3>follow us</h3>
+                <a href="#"> <i class="fab fa-google"></i> google </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            </div>
+        </div>
+
+    </center>   
+    <div class="credit">Fost Food | all rights reserved </div>
+</section>
+
+<!-- footer section ends -->
+
+
+</script>
+
+</body>
+</html>
